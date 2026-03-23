@@ -55,25 +55,24 @@ olist_project/
 
 ## Tests
 
-19 data tests covering uniqueness, not-null constraints, and accepted values across all models.
+19 data tests covering uniqueness, not-null constraints, and accepted values across all models. All tests passing.
 
 ## How to run
-```bash
-# Install dependencies
+
+Install dependencies:
 pip install dbt-bigquery
 
-# Test connection
+Test connection:
 dbt debug
 
-# Run all models
+Run all models:
 dbt run
 
-# Run tests
+Run tests:
 dbt test
-```
 
 ## About
 
-Built by Pavithra Ramesh — Analytics Engineer with 8+ years experience at Amazon, Chubb, and Berkshire Hathaway. 
+Built by Pavithra Ramesh — Analytics Engineer with 8 years experience at Amazon, Chubb, and Berkshire Hathaway. 
 
 LinkedIn: linkedin.com/in/pavithraramesh12
