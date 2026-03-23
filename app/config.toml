@@ -1,0 +1,4 @@
+[project]
+name = "Olist Data Assistant"
+github_repo = "pavithra-analytics/dbt-explainer"
+github_path = "olist_project"
