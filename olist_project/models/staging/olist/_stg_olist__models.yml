@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: stg_olist__orders
+    description: "Staged orders data from the Olist e-commerce platform"
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Identifier linking order to customer"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Current status of the order"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['delivered', 'shipped', 'canceled', 'processing', 'invoiced', 'unavailable', 'approved', 'created']
+
+  - name: stg_olist__customers
+    description: "Staged customers data from Olist"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer record"
+        tests:
+          - unique
+          - not_null
+      - name: customer_unique_id
+        description: "Unique identifier for each customer across multiple orders"
+        tests:
+          - not_null
+
+  - name: stg_olist__order_items
+    description: "Staged order items data from Olist"
+    columns:
+      - name: order_id
+        description: "Identifier linking item to order"
+        tests:
+          - not_null
+      - name: seller_id
+        description: "Identifier linking item to seller"
+        tests:
+          - not_null
+      - name: price
+        description: "Price of the order item in BRL"
+        tests:
+          - not_null
+
+  - name: stg_olist__sellers
+    description: "Staged sellers data from Olist"
+    columns:
+      - name: seller_id
+        description: "Unique identifier for each seller"
+        tests:
+          - unique
+          - not_null
